@@ -1,7 +1,10 @@
+* {
+    font-family: 'Inter', sans-serif;
+}
+
 body  {
     padding: 0px;
     margin: 0px;
-    font-family: 'Inter', sans-serif;
     background-color: #F5F5F5;
 }
 
@@ -74,8 +77,8 @@ li a, li a img {
     justify-content: center;
     align-items: center;
 
-    width: 181px;
-    height: 64px;
+    width: 160px;
+    height: 60px;
     padding: 0px;
     border-radius: 32px;
     gap: 5px;
@@ -83,7 +86,8 @@ li a, li a img {
     background: #FF3D9A;
     border: none;
     color: #F5F5F5;
-    font-weight: 700;
+    font-weight: 800;
+    font-size: medium;
     cursor: pointer;
 
 }
@@ -94,9 +98,74 @@ li a, li a img {
     border: #1E1F27 1px solid;
     border-radius: 15px;
     background-color: #1E1F27;
+    margin-top: 15px;
 }
 
+/* INTRODUCTION */
 
+.introduction {
+    width: 100%;
+    height: 100vh;
+
+    padding-top: 6%;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+.left {
+    width: 100%;
+    height: 100vh;
+    grid-column: span 3;
+}
+
+.left h1 {
+    font-weight: 800;
+    font-size: 58px;
+}
+
+.left h2 {
+    font-weight: 800;
+    font-size: 28px;
+}
+
+.left p {
+    font-weight: 500;
+    word-spacing: 2px;
+    font-size: 24px;
+    line-height: 38px;
+}
+
+.right {
+    width: 100%;
+    height: 100vh;
+    grid-column: span 3;
+}
+
+.btn-group {  
+    display: inline-flex;
+}
+
+.btn-adopt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+    margin-left: 20px;
+
+    background-color: transparent;
+    border: #1E1F27 2px solid;
+    border-radius: 32px;
+    cursor: pointer;
+
+    font-size: medium;
+    font-weight: 800;
+}
+
+.btn-adopt img {
+    margin-right: 5%;
+}
+/* END INTRODUCTION */
 
 
 /* phones */
