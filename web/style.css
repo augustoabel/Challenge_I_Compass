@@ -1,5 +1,5 @@
 * {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body  {
@@ -167,6 +167,143 @@ li a, li a img {
 }
 /* END INTRODUCTION */
 
+/* HOW TO HELP */
+
+.how-help { 
+    display: grid;
+    width: 100%;
+    height: 200vh;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: #1E1F27;
+}
+
+.title {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: auto;
+    grid-column: span 6;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 0.5;
+    color: #F5F5F5;
+}
+
+.sub-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+    grid-column: span 6
+}
+
+.primary {
+    display: flex;
+    justify-content: space-evenly;
+    color: #F8DB46;
+    padding: 0px;
+}
+
+.secondary { 
+    padding: 0px;
+    color:#FFFFFF;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.carousel {
+    grid-column: span 6;
+}
+
+.carousel-img {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    margin-top: 70px;
+}
+
+.carousel-img img { 
+    grid-column: span 3;
+}
+
+.carousel-img button {
+    grid-column: span 1;
+}
+
+.carousel-img div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+}
+
+.line-2 {
+    border: #1E1F27 1px solid;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.your-donate {
+    margin-top: 140px;
+}
+
+.group-card {
+    display: grid;
+    grid-column: span 6;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: #1E1F27;
+}
+
+.card  {
+    margin: auto;
+    margin-bottom: 50px;
+    width: 350px;
+    height: 320px;
+    display: grid;
+    grid-column: span 4;
+    background-color: transparent;
+    border: #F5F5F5 1px solid;
+    border-radius: 20px;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.title-card {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color:#F5F5F5;
+    font-weight: 700;
+    font-size: 32px;
+    grid-column: span 4;
+    margin-left: 15px;
+}
+
+.icon-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 2;
+}
+
+.text-card {
+    grid-column: span 6;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: var(--transparent-max, #FFFFFFCC);
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+/* END HOW TO HELP */
 
 /* phones */
 @media (max-width: 678px) {
