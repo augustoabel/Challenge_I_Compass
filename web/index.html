@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <nav class="">
+        <nav>
             <ul class="list">
                 <div class="items">
                     <div class="items-1">
@@ -22,7 +22,7 @@
                     <div class="items-2">
                         <li><a href="#"><img src="./img/fone.png" alt="Fone"/>631-249-7325</a></li>
                         <li>
-                            <button class="btn-donate" >
+                            <button class="btn-donate" onclick="show_modal('modal-donate')">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M9.17254 5.32636C12.0736 4.60092 13.9784 5.50858 15.1382 6.66837C15.2645 6.7947 15.3813 6.92326 15.4892 7.05201C15.6158 7.20323 15.803 7.29059 16.0002 7.29059C16.1975 7.29059 16.3846 7.20323 16.5113 7.05201C16.6191 6.92325 16.7359 6.79469 16.8623 6.66837C18.0221 5.50854 19.9271 4.60094 22.8287 5.32635C25.7269 6.05092 27.9142 8.23014 28.6442 10.968C29.3791 13.7243 28.6193 16.9632 25.8046 19.7779C22.6904 22.8921 20.0321 25.5517 18.3591 27.2258C17.0575 28.5282 14.9499 28.5288 13.6476 27.2268L6.19755 19.7779C3.38176 16.9625 2.62191 13.7236 3.35708 10.9674C4.08733 8.22969 6.27503 6.05092 9.17254 5.32636Z" fill="white"/>
                                 </svg>Donate
@@ -32,6 +32,147 @@
                 </div>
             </ul>
         </nav>
+
+        <dialog class="modal-donate">
+            <div class="title-modal-donate">
+                <h1>Choose your Donate </h1>
+            </div>
+            
+                <p id="error-message" class="error" style="display:none;">Please select a payment method.</p>
+                <div class="error-message-donate"></div>
+                <form action="" id="form-donate">
+                    <div class="form-data">
+                        <label for="email">EMAIL<span style="font-weight: 700; color: #3F96FC;">*</span></label>
+                        <input type="email" class="email" name="email" id="email" placeholder="youremail@here" >
+
+                        <label for="value">HOW MUCH CAN YOU HELP?<span style="font-weight: 700; color: #3F96FC;">*</span></label>
+                        <input type="number" class="how-much" name="value" id="how-much" placeholder="R$ 95,00 ">
+
+                        <label for="pay-method">PAYMENT METHOD<span style="font-weight: 700; color: #3F96FC;">*</span></label>
+                    </div>
+                    
+                    
+                    <div class="pay-methods">
+                        <div class="pay-method">
+                            <input type="radio" class="pix" id="pix" name="pay-method">
+                            <label for="pix">Pix <span class="radios"></span></label> 
+                        </div>   
+                        <div class="pay-method">
+                            <input type="radio" id="credit-card" name="pay-method">
+                            <label for="credit-card" class="credit-card">
+                                Credit Card
+                                <div class="radios"></div>
+                            </label>
+                        </div> 
+                        <div class="pay-method">
+                            <input type="radio" class="paypal" id="paypal" name="pay-method">
+                            <label for="paypal">
+                                Paypal
+                                <div class="radios"></div>
+                            </label>
+                        </div>  
+                        
+                        <div class="group-buttons">
+                            <button class="btn-help">
+                                <svg width="32" height="32" style="margin-right: 10px;" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.17254 5.32636C12.0736 4.60092 13.9784 5.50858 15.1382 6.66837C15.2645 6.7947 15.3813 6.92326 15.4892 7.05201C15.6158 7.20323 15.803 7.29059 16.0002 7.29059C16.1975 7.29059 16.3846 7.20323 16.5113 7.05201C16.6191 6.92325 16.7359 6.79469 16.8623 6.66837C18.0221 5.50854 19.9271 4.60094 22.8287 5.32635C25.7269 6.05092 27.9142 8.23014 28.6442 10.968C29.3791 13.7243 28.6193 16.9632 25.8046 19.7779C22.6904 22.8921 20.0321 25.5517 18.3591 27.2258C17.0575 28.5282 14.9499 28.5288 13.6476 27.2268L6.19755 19.7779C3.38176 16.9625 2.62191 13.7236 3.35708 10.9674C4.08733 8.22969 6.27503 6.05092 9.17254 5.32636Z" fill="white"/>
+                                </svg> I wanna Help
+                            </button>
+                            <button class="btn-cancel" onclick="close_modal('modal-donate')">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.7073 25.2926C20.8002 25.3855 20.8739 25.4958 20.9242 25.6172C20.9745 25.7386 21.0004 25.8687 21.0004 26.0001C21.0004 26.1315 20.9745 26.2616 20.9242 26.383C20.8739 26.5044 20.8002 26.6147 20.7073 26.7076C20.6144 26.8005 20.5041 26.8742 20.3827 26.9245C20.2613 26.9747 20.1312 27.0006 19.9998 27.0006C19.8684 27.0006 19.7383 26.9747 19.6169 26.9245C19.4955 26.8742 19.3852 26.8005 19.2923 26.7076L9.29231 16.7076C9.19933 16.6147 9.12557 16.5044 9.07525 16.383C9.02493 16.2616 8.99902 16.1315 8.99902 16.0001C8.99902 15.8687 9.02493 15.7385 9.07525 15.6171C9.12557 15.4957 9.19933 15.3854 9.29231 15.2926L19.2923 5.29257C19.4799 5.10493 19.7344 4.99951 19.9998 4.99951C20.2652 4.99951 20.5197 5.10493 20.7073 5.29257C20.895 5.48021 21.0004 5.7347 21.0004 6.00007C21.0004 6.26543 20.895 6.51993 20.7073 6.70757L11.4136 16.0001L20.7073 25.2926Z" fill="white"/>
+                                </svg> Cancel
+                            </button> 
+                        </div>
+                    </div>
+                    
+                </form>
+        </dialog>
+
+        <dialog class="modal-apply-adopt">
+            <div class="modal-content">
+                <div class="title-modal-adopt">
+                    <h1>Apply to Adopt</h1>
+                    <span>Small text description can goes here</span>
+                </div>
+
+                <div class="form-adopt">
+                    <form action="" id="form-adopt">
+                        <div class="error-message"></div>
+                        <div class="form-data">
+                            <label for="email">EMAIL*</label>
+                            <input type="email" class="email" name="email" id="email" placeholder="youremail@here" >
+                        </div>
+                        
+                        <div class="form-data">
+                            <label for="full-name">FULL NAME*</label>
+                            <input type="text" class="full-name" name="full-name" placeholder="Your name" >
+                            <label>DATE OF BIRTH*</label>
+                        </div>
+                        
+                        <div class="birth-fields">
+                            <select id="day" name="day">
+                                <option value="" disabled selected>Day</option>
+                                <option value="2">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                            <select id="month" name="month">
+                                <option value="" disabled selected>Month</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                            </select>
+                            <select id="year" name="year">
+                                <option value="" disabled selected>Year</option>
+                                <option value="2000">2000</option>
+                                <option value="2000">2001</option>
+                                <option value="2000">2002</option>
+                                <option value="2000">2003</option>
+                            </select>
+                        </div>
+
+                        <div class="acept-terms">
+                                <input type="checkbox" id="checkbox" style="display: none;" onclick="valida()">
+                                <label for="checkbox">
+                                    <div class="checkbox"></div>
+                                </label>
+
+                                <span style="margin-left: 10px; margin-right: 5px" >I agree with </span>
+                                <a class="privacy" href="#"> Privacy Policy </a> 
+                                <span style="margin-left: 5px; margin-right: 5px">and</span> 
+                                <a class="terms" href="#"> Terms of Conditions </a>
+                        </div>
+
+                        <div class="group-buttons">
+                            <button class="btn-modal-adopt">
+                                <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.349 3.03948C19.4125 2.99692 19.4778 2.95619 19.5449 2.91743C20.4013 2.42302 21.3833 2.34953 22.2918 2.47699C23.2062 2.60527 24.1416 2.94825 25.014 3.4093C26.7432 4.32321 28.4341 5.81394 29.4008 7.48824C30.4106 9.23733 30.4679 10.9195 29.8124 12.3759C29.19 13.7588 27.9972 14.7807 26.7949 15.4748C26.3915 15.7077 25.9565 15.9213 25.4997 16.0965C25.4969 15.2497 25.4051 14.3689 25.2363 13.4783C25.339 13.4254 25.4419 13.3692 25.5449 13.3097C26.495 12.7612 27.2048 12.0784 27.5327 11.3499C27.8274 10.6949 27.8827 9.85892 27.2357 8.73824C26.5455 7.5428 25.2384 6.35556 23.8458 5.61961C23.1573 5.25572 22.5008 5.03079 21.9444 4.95274C21.6738 4.91477 21.4483 4.91401 21.2627 4.93759C20.6616 4.20922 20.0186 3.56633 19.349 3.03948Z" fill="white"/>
+                                    <path d="M11.6508 3.03925C11.5874 2.99678 11.5222 2.95612 11.4552 2.91743C10.5989 2.42302 9.6168 2.34953 8.70835 2.47699C7.79398 2.60527 6.85858 2.94825 5.9862 3.4093C4.2569 4.32321 2.56603 5.81394 1.59937 7.48824C0.589539 9.23733 0.532235 10.9195 1.18775 12.3759C1.81015 13.7588 3.00297 14.7807 4.20521 15.4748C4.60851 15.7076 5.04321 15.9211 5.49982 16.0963C5.50264 15.2494 5.59446 14.3686 5.76326 13.478C5.66075 13.4252 5.55801 13.3691 5.45521 13.3097C4.50514 12.7612 3.79538 12.0784 3.46749 11.3499C3.17271 10.6949 3.11742 9.85892 3.76444 8.73824C4.45463 7.5428 5.76176 6.35556 7.15432 5.61961C7.84287 5.25572 8.49937 5.03079 9.0557 4.95274C9.32605 4.91481 9.55136 4.91401 9.73688 4.93752C10.3381 4.20907 10.9811 3.56613 11.6508 3.03925Z" fill="white"/>
+                                    <path d="M14.6998 18.4333C15.0998 18.9667 15.8998 18.9667 16.2998 18.4333L17.2998 17.1C17.7942 16.4408 17.3238 15.5 16.4998 15.5H14.4998C13.6757 15.5 13.2053 16.4408 13.6998 17.1L14.6998 18.4333Z" fill="#F5F5F5"/>
+                                    <path d="M13.5002 11C13.5002 11.8284 12.8287 12.5 12.0002 12.5C11.1718 12.5 10.5002 11.8284 10.5002 11C10.5002 10.1716 11.1718 9.5 12.0002 9.5C12.8287 9.5 13.5002 10.1716 13.5002 11Z" fill="white"/>
+                                    <path d="M20.5002 11C20.5002 11.8284 19.8287 12.5 19.0002 12.5C18.1718 12.5 17.5002 11.8284 17.5002 11C17.5002 10.1716 18.1718 9.5 19.0002 9.5C19.8287 9.5 20.5002 10.1716 20.5002 11Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5002 0.25C13.9059 0.25 12.4024 0.91221 11.0918 1.893C9.77757 2.87655 8.58879 4.22923 7.59094 5.75104C5.60621 8.77797 4.25023 12.6715 4.25023 16.1364C4.25023 19.697 5.6887 22.1839 7.9261 23.7286C10.0925 25.2242 12.878 25.75 15.5002 25.75C18.1225 25.75 20.908 25.2242 23.0744 23.7286C25.3118 22.1839 26.7502 19.697 26.7502 16.1364C26.7502 12.6715 25.3943 8.77797 23.4095 5.75104C22.4117 4.22923 21.2229 2.87655 19.9086 1.893C18.5981 0.91221 17.0946 0.25 15.5002 0.25ZM6.75023 16.1364C6.75023 13.25 7.90897 9.8253 9.6816 7.12187C10.5624 5.7785 11.563 4.66295 12.5897 3.89457C13.6202 3.12343 14.6093 2.75 15.5002 2.75C16.3912 2.75 17.3803 3.12343 18.4107 3.89457C19.4375 4.66295 20.438 5.7785 21.3189 7.12187C23.0915 9.8253 24.2502 13.25 24.2502 16.1364C24.2502 18.927 23.174 20.6219 21.654 21.6712C20.2911 22.6122 18.4705 23.0996 16.5002 23.22V19.567C16.7258 19.4368 16.9308 19.2589 17.1 19.0334L18.1 17.7C19.0888 16.3816 18.148 14.5 16.5 14.5H14.5C12.8519 14.5 11.9111 16.3816 12.9 17.7L13.9 19.0334C14.0693 19.2591 14.2744 19.4371 14.5002 19.5673V23.22C12.53 23.0996 10.7094 22.6122 9.34644 21.6712C7.82648 20.6219 6.75023 18.927 6.75023 16.1364ZM16.5 16.5L15.5 17.8334L14.5 16.5H16.5Z" fill="white"/>
+                                    </svg>                                    
+                                I wanna to Adopt!
+                            </button>
+                        </div>
+                    </form>
+                    <button class="btn-modal-cancel" onclick="close_modal('modal-apply-adopt')">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.7073 25.2926C20.8002 25.3855 20.8739 25.4958 20.9242 25.6172C20.9745 25.7386 21.0004 25.8687 21.0004 26.0001C21.0004 26.1315 20.9745 26.2616 20.9242 26.383C20.8739 26.5044 20.8002 26.6147 20.7073 26.7076C20.6144 26.8005 20.5041 26.8742 20.3827 26.9245C20.2613 26.9747 20.1312 27.0006 19.9998 27.0006C19.8684 27.0006 19.7383 26.9747 19.6169 26.9245C19.4955 26.8742 19.3852 26.8005 19.2923 26.7076L9.29231 16.7076C9.19933 16.6147 9.12557 16.5044 9.07525 16.383C9.02493 16.2616 8.99902 16.1315 8.99902 16.0001C8.99902 15.8687 9.02493 15.7385 9.07525 15.6171C9.12557 15.4957 9.19933 15.3854 9.29231 15.2926L19.2923 5.29257C19.4799 5.10493 19.7344 4.99951 19.9998 4.99951C20.2652 4.99951 20.5197 5.10493 20.7073 5.29257C20.895 5.48021 21.0004 5.7347 21.0004 6.00007C21.0004 6.26543 20.895 6.51993 20.7073 6.70757L11.4136 16.0001L20.7073 25.2926Z" fill="white"></path>
+                        </svg>
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </dialog>
         <div class="line"></div>
 
         <div class="introduction ">
@@ -41,12 +182,12 @@
                 <h2>Your Gift Helps Save Lives</h2>
 
                 <div class="btn-group">
-                    <button class="btn-donate" >
+                    <button class="btn-donate" onclick="show_modal('modal-donate')">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.17254 5.32636C12.0736 4.60092 13.9784 5.50858 15.1382 6.66837C15.2645 6.7947 15.3813 6.92326 15.4892 7.05201C15.6158 7.20323 15.803 7.29059 16.0002 7.29059C16.1975 7.29059 16.3846 7.20323 16.5113 7.05201C16.6191 6.92325 16.7359 6.79469 16.8623 6.66837C18.0221 5.50854 19.9271 4.60094 22.8287 5.32635C25.7269 6.05092 27.9142 8.23014 28.6442 10.968C29.3791 13.7243 28.6193 16.9632 25.8046 19.7779C22.6904 22.8921 20.0321 25.5517 18.3591 27.2258C17.0575 28.5282 14.9499 28.5288 13.6476 27.2268L6.19755 19.7779C3.38176 16.9625 2.62191 13.7236 3.35708 10.9674C4.08733 8.22969 6.27503 6.05092 9.17254 5.32636Z" fill="white"/>
                         </svg>Donate
                     </button>
-                    <button class="btn-adopt" >
+                    <button class="btn-adopt" onclick="show_modal('modal-apply-adopt')">
                         <img src="img/dog-icon.png" alt="Dog">
                         Apply to Adopt
                     </button>
@@ -173,7 +314,7 @@
                 <li>Donate $400 to adopt their dog/puppy; $125 for a cat; $150 for a kitten</li>
                 <li> Be over 23 years of age to adopt a dog and 21 years of age to adopt a cat</li>
                 <li>Be ready to adopt within 7-10 days</li>
-                <button class="btn-last-adopt" >
+                <button class="btn-last-adopt" onclick="show_modal('modal-apply-adopt')">
                     Apply to Adopt
                 </button>
             </div>
@@ -195,7 +336,7 @@
                 <div class="card-II">
                     <span class="title-card-II">Adopt or Foster</span>
                     <span class="text-card-II">Provide a forever or temporary home to a homeless animal.</span>
-                    <button class="btn-card-II btn-view">View Adoptables</button>
+                    <button class="btn-card-II btn-view" onclick="apply_adopt()">View Adoptables</button>
                 </div>
                 <div class="card-II">
                     <span class="title-card-II">Volunteer</span>
@@ -224,8 +365,8 @@
                     </h1>
                     <span>Browse our adorable adoptables</span>
                     <div class="btns">
-                        <button class="btn-1">View Adoptables</button>
-                        <button class="btn-2">Apply to Adopt</button>
+                        <button class="btn-1" onclick="apply_adopt()">View Adoptables</button>
+                        <button class="btn-2" onclick="show_modal('modal-apply-adopt')">Apply to Adopt</button>
                     </div>
                 </div>
                 <img class="img-right" src="./img/Dog.png" alt="Dog">
@@ -237,10 +378,8 @@
                 <h1>Subscribe to our newsletter</h1>
                 <span>for updates on shelter events, fundraising parties, and heartwarming stories of animals finding their forever homes.</span>
                 <div class="form-session-IV">
-                    <form>
-                        <input type="email" class="email-session-IV" placeholder="Enter your email">
-                        <button class="subscribe">Subscribe</button>
-                    </form>
+                    <input type="email" class="email-session-IV" placeholder="Enter your email">
+                    <button class="subscribe">Subscribe</button>
                 </div>
             </div>
             <footer class="footer">
@@ -280,7 +419,6 @@
                 <div class="text-footer">
                     <h1>​We are not just a rescue,<span> we are a refuge</span></h1>
                 </div>
-                
             </footer>
         </div>
     </div>
