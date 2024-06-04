@@ -216,31 +216,36 @@ li a, li a img {
     margin-top: 20px;
 }
 
-.carousel {
-    grid-column: span 6;
-}
 
 .carousel-img {
+    grid-column: span 6;
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     margin-top: 70px;
 }
 
-.carousel-img img { 
-    grid-column: span 3;
+.imgs  {
+    grid-column: span 12;
+    display: flex;
+    justify-content: space-around;
 }
 
-.carousel-img button {
-    grid-column: span 1;
+.imgs img {
+    transition: opacity 0.5s ease-in-out;
 }
 
-.carousel-img div {
+.hidden {
+    opacity: 0;
+}
+
+.div-btn {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .btn-arrow {
+    grid-column: span 1;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -1013,7 +1018,7 @@ li {
      }
 
      .form-data input::placeholder {
-        color: #888; /* Cor cinza clara para placeholder */
+        color: #888; 
         font-family: 'Poppins', sans-serif;
         font-size: 14px;
     }
@@ -1022,6 +1027,7 @@ li {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: auto;
         width: 150px;
         height: 55px;
         padding: 16px 32px 16px 32px;
@@ -1104,11 +1110,6 @@ li {
         line-height: 24px;
         letter-spacing: -0.02em;
         
-    }
-
-    .form-adopt {
-        /* display: grid;
-        grid-template-columns: repeat(12, 1fr); */
     }
 
     .form-adopt form {
@@ -1226,6 +1227,42 @@ li {
 
     
 /* END MODAL APPLY TO ADOPT */
+
+/* THANKS */
+
+.thanks {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.text-left {
+    grid-column: span 6;
+
+}
+
+.thanks {
+    margin-top: 100px;
+    height: 50vh;
+}
+
+.thanks p {
+    font-family: 'Poppins';
+    font-size: 18px;
+    line-height: 2rem;
+}
+
+.my-dog {
+    display: flex;
+    justify-content: center;
+    /* align-self: start; */
+    grid-column: span 6;
+}
+
+.my-dog img {
+    height: 322px;
+    width: 329;
+}
+/* END THANKS */
 
 
 /* phones */
