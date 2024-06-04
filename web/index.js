@@ -99,7 +99,7 @@ document.getElementById('form-adopt').addEventListener('submit', function(event)
     
     event.preventDefault()
 
-    const email = document.querySelector('.email').value
+    const email = document.querySelector('.email2').value
     const full_name = document.querySelector('.full-name').value
     const day = document.getElementById('day').value
     const month = document.getElementById('month').value
@@ -107,7 +107,7 @@ document.getElementById('form-adopt').addEventListener('submit', function(event)
     const checkbox = document.getElementById('checkbox').checked
 
     let errorMessages = []
-
+    console.log("Email", email)
     if (email === '') {
         errorMessages.push('Email é obrigatório')
     }
@@ -139,6 +139,7 @@ document.getElementById('form-adopt').addEventListener('submit', function(event)
         })
         return
     }
+    window.location.href = 'thanks.html'
 })
 
 
