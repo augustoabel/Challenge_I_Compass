@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>View Adoptables</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="">
+            <ul class="list">
+                <div class="items">
+                    <div class="items-1">
+                        <li class="logo"><img  src="./img/Logotype.png" alt="Logo" /></li>
+                        <li class="l2"><a href="#">Rescue сenter</a></li>
+                        <li class="l2"><a href="#">Apply to adopt</a></li>
+                        <li class="l3"><a href="#">Volunteer</a></li>
+                        <li class="l3"><a href="#">Ways to give</a></li>
+                        <li class="l3"><a href="#">Events</a></li>
+                    </div>
+                    <div class="items-2">
+                        <li><a href="#"><img src="./img/fone.png" alt="Fone"/>631-249-7325</a></li>
+                        <li>
+                            <button class="btn-donate" onclick="show_modal('modal-donate')">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.17254 5.32636C12.0736 4.60092 13.9784 5.50858 15.1382 6.66837C15.2645 6.7947 15.3813 6.92326 15.4892 7.05201C15.6158 7.20323 15.803 7.29059 16.0002 7.29059C16.1975 7.29059 16.3846 7.20323 16.5113 7.05201C16.6191 6.92325 16.7359 6.79469 16.8623 6.66837C18.0221 5.50854 19.9271 4.60094 22.8287 5.32635C25.7269 6.05092 27.9142 8.23014 28.6442 10.968C29.3791 13.7243 28.6193 16.9632 25.8046 19.7779C22.6904 22.8921 20.0321 25.5517 18.3591 27.2258C17.0575 28.5282 14.9499 28.5288 13.6476 27.2268L6.19755 19.7779C3.38176 16.9625 2.62191 13.7236 3.35708 10.9674C4.08733 8.22969 6.27503 6.05092 9.17254 5.32636Z" fill="white"/>
+                                </svg>Donate
+                            </button>
+                        </li>
+                    </div>
+                </div>
+            </ul>
+        </nav>  
+
+        <dialog class="modal-donate">
+            <div class="title-modal-donate">
+                <h1>Choose your Donate </h1>
+            </div>
+            
+                <p id="error-message" class="error" style="display:none;">Please select a payment method.</p>
+                <div class="error-message-donate"></div>
+                <form action="" id="form-donate">
+                    <div class="form-data">
+                        <label for="email">EMAIL<span style="font-weight: 700; color: #3F96FC;">*</span></label>
+                        <input type="email" class="email" name="email" id="email" placeholder="youremail@here" >
+
+                        <label for="value">HOW MUCH CAN YOU HELP?<span style="font-weight: 700; color: #3F96FC;">*</span></label>
+                        <input type="number" class="how-much" name="value" id="how-much" placeholder="R$ 95,00 ">
+
+                        <label for="pay-method">PAYMENT METHOD<span style="font-weight: 700; color: #3F96FC;">*</span></label>
+                    </div>
+                    
+                    
+                    <div class="pay-methods">
+                        <div class="pay-method">
+                            <input type="radio" class="pix" id="pix" name="pay-method">
+                            <label for="pix">Pix <span class="radios"></span></label> 
+                        </div>   
+                        <div class="pay-method">
+                            <input type="radio" id="credit-card" name="pay-method">
+                            <label for="credit-card" class="credit-card">
+                                Credit Card
+                                <div class="radios"></div>
+                            </label>
+                        </div> 
+                        <div class="pay-method">
+                            <input type="radio" class="paypal" id="paypal" name="pay-method">
+                            <label for="paypal">
+                                Paypal
+                                <div class="radios"></div>
+                            </label>
+                        </div>  
+                        
+                        <div class="group-buttons">
+                            <button class="btn-help">
+                                <svg width="32" height="32" style="margin-right: 10px;" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.17254 5.32636C12.0736 4.60092 13.9784 5.50858 15.1382 6.66837C15.2645 6.7947 15.3813 6.92326 15.4892 7.05201C15.6158 7.20323 15.803 7.29059 16.0002 7.29059C16.1975 7.29059 16.3846 7.20323 16.5113 7.05201C16.6191 6.92325 16.7359 6.79469 16.8623 6.66837C18.0221 5.50854 19.9271 4.60094 22.8287 5.32635C25.7269 6.05092 27.9142 8.23014 28.6442 10.968C29.3791 13.7243 28.6193 16.9632 25.8046 19.7779C22.6904 22.8921 20.0321 25.5517 18.3591 27.2258C17.0575 28.5282 14.9499 28.5288 13.6476 27.2268L6.19755 19.7779C3.38176 16.9625 2.62191 13.7236 3.35708 10.9674C4.08733 8.22969 6.27503 6.05092 9.17254 5.32636Z" fill="white"/>
+                                </svg> I wanna Help
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <button class="btn-cancel" onclick="close_modal('modal-donate')">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.7073 25.2926C20.8002 25.3855 20.8739 25.4958 20.9242 25.6172C20.9745 25.7386 21.0004 25.8687 21.0004 26.0001C21.0004 26.1315 20.9745 26.2616 20.9242 26.383C20.8739 26.5044 20.8002 26.6147 20.7073 26.7076C20.6144 26.8005 20.5041 26.8742 20.3827 26.9245C20.2613 26.9747 20.1312 27.0006 19.9998 27.0006C19.8684 27.0006 19.7383 26.9747 19.6169 26.9245C19.4955 26.8742 19.3852 26.8005 19.2923 26.7076L9.29231 16.7076C9.19933 16.6147 9.12557 16.5044 9.07525 16.383C9.02493 16.2616 8.99902 16.1315 8.99902 16.0001C8.99902 15.8687 9.02493 15.7385 9.07525 15.6171C9.12557 15.4957 9.19933 15.3854 9.29231 15.2926L19.2923 5.29257C19.4799 5.10493 19.7344 4.99951 19.9998 4.99951C20.2652 4.99951 20.5197 5.10493 20.7073 5.29257C20.895 5.48021 21.0004 5.7347 21.0004 6.00007C21.0004 6.26543 20.895 6.51993 20.7073 6.70757L11.4136 16.0001L20.7073 25.2926Z" fill="white"/>
+                    </svg> Cancel
+                </button> 
+        </dialog>
+
+        <div class="thanks">
+            <div class="text-left">
+                <h1>Thank you very much!</h1>
+
+                <p>Thanks to you, we are one step closer to providing a safe and loving home for each of our rescued animals.</p>
+            
+                <h1>Your contribution makes a difference!</h1>
+    
+                <p>Whether through donations, volunteering or adoption, your every gesture transforms lives. Together, we are creating a world where all animals are cared for, the respect and love they deserve.</p>
+            </div>
+            <div class="my-dog">
+                <img src="./img/Group 6.png">
+            </div>
+           
+        </div>
+
+        <footer class="footer">
+            <div class="column-1">
+                <img src="./img/LogoLG.png" alt="Logo">
+                <span>Forever Homes <img src="./img/heart.png" alt="Heart"></span>
+            </div>
+            <div class="column-2">
+                <span>Adopt a Pet</span>
+                <span>Adoptable Dogs</span>
+                <span>Adoptable Cats</span>
+                <span>Become a Foster</span>
+                <span>Rescue Center</span>
+                <span>Get Involved</span>
+            </div>
+            <div class="column-3">
+                <span>Ways to Donate</span>
+                <span>Upcoming Events</span>
+                <span>Outreach Programs</span>
+                <span>Who We Are</span>
+                <span>Contact Us</span>
+                <span>Shop With Purpose</span>
+            </div>
+            <div class="column-4">
+                <span><img src="./img/point.png" alt="Adress"> PO Box 83644<br>
+                    Middleton, 2452 Wilson</span>
+                <span><img src="./img/foneFooter.png" alt="Fone"> 631-249-7325</span>
+                <span><img src="./img/email.png" alt="Email"> pet_home@gmail.com</span>
+                <div class="icons">
+                    <img src="./img/twitter.png" width="28" alt="Twitter">
+                    <img src="./img/wpp.png" alt="WhatsApp" class="wpp">
+                    <img src="./img/instagram.png" alt="Instagram">
+                </div>
+            </div>
+
+            <div class="line-footer"></div>
+            <div class="text-footer">
+                <h1>​We are not just a rescue,<span> we are a refuge</span></h1>
+            </div>
+            
+        </footer>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

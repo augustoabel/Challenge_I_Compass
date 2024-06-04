@@ -216,31 +216,36 @@ li a, li a img {
     margin-top: 20px;
 }
 
-.carousel {
-    grid-column: span 6;
-}
 
 .carousel-img {
+    grid-column: span 6;
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     margin-top: 70px;
 }
 
-.carousel-img img { 
-    grid-column: span 3;
+.imgs  {
+    grid-column: span 12;
+    display: flex;
+    justify-content: space-around;
 }
 
-.carousel-img button {
-    grid-column: span 1;
+.imgs img {
+    transition: opacity 0.5s ease-in-out;
 }
 
-.carousel-img div {
+.hidden {
+    opacity: 0;
+}
+
+.div-btn {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .btn-arrow {
+    grid-column: span 1;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -471,6 +476,7 @@ li {
 .btn-view {
     background-color: #04C27F;
     color: #1E1F27;
+    cursor: pointer;
 }
 
 .btn-get-involved {
@@ -579,6 +585,7 @@ li {
     border-radius: 30px;
     background-color: #F8DB46;
     color: #1E1F27;
+    cursor: pointer;
 }
 
 .btn-2 {
@@ -595,6 +602,7 @@ li {
     border: #FFFFFF 1px solid;
     background-color: transparent;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 /* END SESSION III */
@@ -661,9 +669,6 @@ li {
 
 }
 
-::placeholder {
-    color: #FFFFFF80;
-}
 
 .subscribe {
     text-align: center;
@@ -758,6 +763,507 @@ li {
     color: #FF3D9A;
 }
 /* END SESSION IV */
+
+/* VIEW ADOPTABLES */
+
+    .pets {
+        display: grid;
+
+        grid-template-columns: repeat(12vh, 1fr);
+        background-color: #1E1F27;
+    }
+
+    .back {
+        grid-column: span 12;
+        margin: auto;
+    }
+
+    .btn-back {
+        width: 156px;
+        height: 64px;
+        padding: 16px 32px 16px 32px;
+        margin-top: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 32px;
+        border: none;
+        font-weight: 700;
+        color: #FFFFFF;
+        background-color: #37383F;
+        cursor: pointer;
+    }
+
+    .title-pets {
+        grid-column: span 12;
+        font-family: 'Poppins';
+        font-size: 56px;
+        font-weight: 700;
+        line-height: 67.2px;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: #FFFFFF;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .cards-pets {
+        display: grid;
+        grid-column: span 12;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .pet {
+        color: #FFFFFF;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: span 3;
+    }
+
+    .img-pet {
+        width: 250px;
+        height: 250px;
+    }
+
+    .name-pet {
+        font-family: 'Poppins';
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 51.2px;
+        letter-spacing: -0.02em;
+        text-align: center;
+        margin: 16px;
+    }
+
+    .see-more {
+        width: 250px;
+        height: 64px;
+        padding: 16px 32px 16px 32px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 60px;
+
+        border-radius: 32px;
+        border: none;
+        border: 2px 0px 0px 0px;
+        
+        font-size: 18px;
+        font-weight: 700;
+        color: #FFFFFF;
+        background-color: #FF3D9A;
+        cursor: pointer;
+    }
+/* END VIEW ADOPTABLES */
+
+
+/* MODAL DONATE */
+
+    .modal-donate {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 20vh auto auto;
+        width: 480px;
+        height: 716px;
+        padding: 32px 0px 0px 0px;
+
+        border-radius: 32px;
+        border: none;  
+
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .title-modal-donate {
+        display: flex;
+        justify-content: center;
+        grid-column: span 12;
+    }
+
+    .title-modal-donate h1 {
+        font-family: 'Poppins';
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 57.6px;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: #1E1F27;
+    }
+
+    .form-data {
+        display: grid;
+        grid-column: span 12;
+    }
+
+    .form-data label {
+        margin-bottom: 10px;
+    }
+
+    form {
+        margin-left: 20px;
+        margin-right: 20px;
+        grid-column: span 12;
+        justify-content: center;
+        align-items: top;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+    
+    .pay-methods {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column: span 12;
+        /* margin: auto; */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pay-method {
+        grid-column: span 1;
+        margin-right: 10px;
+        border-radius: 10px;
+    }
+
+    .form-data input {
+        border: #3F96FC 1px solid;
+        width: 416px;
+        height: 50px;
+        padding: 0px 0px 0px 10px;
+        border-radius: 8px;
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    .pay-method [type="radio"]:checked + label {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .pay-method [type="radio"]:checked + label .radios {
+        background-color: #ff00cc;
+    }
+
+    .pay-method input[type="radio"]:checked + label .radios::after {
+        content: '';
+        display: block;
+        width: 13px;
+        height: 10px;
+        margin: auto;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMyAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuMTk2NjQgNy41ODMzNkwxLjQxNjY0IDQuODAzMzZMMS40MTY2NCA0LjgwMzM2TDAuNDY5OTcxIDUuNzQzMzZMNCA5LjQ3MDAzTDEyLjE5NjYgMS40NzAwM0wxMS4yNTY2IDAuNTMwMDI5TDQuMTk2NjQgNy41ODMzNloiIGZpbGw9IiNGNUY1RjUiLz4KPC9zdmc+Cg==');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .pay-method label {
+        display: flex;
+        padding: 15px 25px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s, color 0.3s, border 0.3s;
+        gap: 10px;
+    }
+
+    label {
+        height: 15px;
+        font-family: 'Poppins';
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        color: #FF3D9A;
+        margin-top: 20px;
+     }
+
+     .radios {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        margin: 0px;
+        border-radius: 100%;
+        background-color: #37383F;
+        position: relative;
+    }
+
+
+    .credit-card {
+        padding: 30px 20px 20px 10px !important;
+    }
+
+     .btn-help {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 220px;
+        height: 55px;
+        padding: 16px 32px 16px 32px;
+        margin-top: 20px;
+        border-radius: 32px;
+        font-family: 'Poppins';
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 32px;
+        text-align: center;
+        background-color: #FF3D9A;
+        color: #FFFFFF;      
+        border: none;
+        cursor: pointer;
+     }
+
+     .form-data input::placeholder {
+        color: #888; 
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+    }
+
+     .btn-cancel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 150px;
+        height: 55px;
+        padding: 16px 32px 16px 32px;
+        margin-top: 30px;
+        gap: 8px;
+        border-radius: 32px ;
+        background: #37383F;
+        color:  #FFFFFF;
+        font-family: 'Poppins';
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+    }
+
+     .group-buttons {
+        grid-column: span 12;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+/* END MODAL DONATE*/
+
+/* MODAL APPLY TO ADOPT */
+
+    .modal-apply-adopt {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 20vh auto auto;
+
+        width: 480px; 
+        height: 716px;
+        padding: 32px 0px 0px 0px;
+        
+        border-radius: 32px;
+        border: none;  
+
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .modal-show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .modal-content {
+        display: inline;
+    }
+
+    .title-modal-adopt {
+        display: inline;
+        justify-content: center;
+        grid-column: span 12;
+        
+    }
+
+    .title-modal-adopt h1{
+        font-family: 'Poppins';
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 57.6px;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: #1E1F27;
+        margin: 0px;
+    }
+
+    .title-modal-adopt span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+        margin-bottom: 50px;
+
+        font-family: 'Poppins';
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        
+    }
+
+    .form-adopt form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .birth-fields {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        gap: 15px;
+        
+    }
+    select {
+        grid-column: span 3;
+        border: #3F96FC 1px solid;
+        height: 50px;
+        padding: 0px 0px 0px 10px;
+        border-radius: 8px;
+    }
+
+    #year {
+        margin-right: 10px;
+    }
+
+    .acept-terms {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .privacy, .terms {
+        color: #ff00cc;
+        text-decoration: none;
+    }
+
+    .btn-modal-adopt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 64px;
+        padding: 16px 24px 16px 24px;
+        margin: 15px 0px 15px 0px;
+        gap: 8px;
+
+        border-radius: 8px;
+        background:#04C27F;
+        color: #F5F5F5;
+        border: none;
+
+        font-family: 'Poppins';
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        cursor: pointer;
+    }
+    .btn-modal-cancel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+
+        width: 440px;
+        height: 64px;
+        padding: 16px 24px 16px 24px;
+        gap: 8px;
+
+        border-radius: 8px;
+        background-color:#37383F;
+        color: #F5F5F5;
+        border: none;
+
+        font-family: 'Poppins';
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        cursor: pointer;
+    }
+
+    .checkbox {
+
+        width: 24px;
+        height: 24px;
+        
+        border-radius: 100%;
+        background-color: #37383F;
+        position: relative;
+        bottom: 20px;
+    }
+
+    #checkbox:checked ~ label .checkbox {
+        background-color: #04C27F;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMyAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuMTk2NjQgNy41ODMzNkwxLjQxNjY0IDQuODAzMzZMMS40MTY2NCA0LjgwMzM2TDAuNDY5OTcxIDUuNzQzMzZMNCA5LjQ3MDAzTDEyLjE5NjYgMS40NzAwM0wxMS4yNTY2IDAuNTMwMDI5TDQuMTk2NjQgNy41ODMzNloiIGZpbGw9IiNGNUY1RjUiLz4KPC9zdmc+Cg==');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .error-message {
+        color: crimson;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 2px;
+    }
+
+    .error-message-donate {
+        margin-left: 20px;
+        color: crimson;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    
+/* END MODAL APPLY TO ADOPT */
+
+/* THANKS */
+
+.thanks {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.text-left {
+    grid-column: span 6;
+
+}
+
+.thanks {
+    margin-top: 100px;
+    height: 50vh;
+}
+
+.thanks p {
+    font-family: 'Poppins';
+    font-size: 18px;
+    line-height: 2rem;
+}
+
+.my-dog {
+    display: flex;
+    justify-content: center;
+    /* align-self: start; */
+    grid-column: span 6;
+}
+
+.my-dog img {
+    height: 322px;
+    width: 329;
+}
+/* END THANKS */
+
 
 /* phones */
 @media (max-width: 678px) {
